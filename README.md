@@ -6,7 +6,7 @@ This project accomplishes the following objectives:
 
 * Implements standard Unix user-level utilities: `sleep`, which pauses execution for a set number of ticks; `find`, which recursively searches directories for specific filenames; and `xargs`, which executes commands from standard input.
 * Improves memory allocation by replacing statically declared arrays with a buddy allocator and implementing lazy page allocation for user-space heap memory.
-* Optimizes the `fork()` system call by using a copy-on-write method that initially shares physical memory pages between parent and child processes, instead of duplicating them.
+* Optimizes the `fork()` system call by using a copy-on-write method that initially shares physical memory pages between parent and child processes, as opposed to directly duplicating them.
 * Adds to the capabilities of the existing `Xv6` file system by supporting much larger file sizes and implementing symbolic links.
 * Implements the `mmap` and `munmap` system calls, allowing processes to dynamically map files directly into memory and share memory with other processes.
 
