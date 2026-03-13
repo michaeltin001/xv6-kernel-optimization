@@ -4,9 +4,9 @@
 
 ### Objective
 
-> In its current form, xv6 files are limited to 268 blocks, or `268*BSIZE` bytes, where `BSIZE` is 1024 bytes in xv6. This limitation arises because each xv6 inode contains 12 direct block numbers and one singly-indirect block number. The singly-indirect block refers to a block that can hold up to 256 additional block numbers, resulting in a total capacity of 12 + 256 = 268 blocks.
+> In its current form, Xv6 files are limited to 268 blocks, or `268*BSIZE` bytes, where `BSIZE` is 1024 bytes in Xv6. This limitation arises because each Xv6 inode contains 12 direct block numbers and one singly-indirect block number. The singly-indirect block refers to a block that can hold up to 256 additional block numbers, resulting in a total capacity of 12 + 256 = 268 blocks.
 >
-> To extend this limit, the xv6 file system code should be modified to support a doubly-indirect block within each inode. This doubly-indirect block will contain 256 addresses of singly-indirect blocks, with each singly-indirect block containing up to 256 addresses of data blocks. With this structure, a file can consist of up to 65803 blocks, calculated as `256*256 + 256 + 11` blocks. The count will use 11 direct blocks instead of 12 because one of the direct block entries needs to store the address of the doubly-indirect block.
+> To extend this limit, the Xv6 file system code should be modified to support a doubly-indirect block within each inode. This doubly-indirect block will contain 256 addresses of singly-indirect blocks, with each singly-indirect block containing up to 256 addresses of data blocks. With this structure, a file can consist of up to 65803 blocks, calculated as `256*256 + 256 + 11` blocks. The count will use 11 direct blocks instead of 12 because one of the direct block entries needs to store the address of the doubly-indirect block.
 
 ### Implementation
 

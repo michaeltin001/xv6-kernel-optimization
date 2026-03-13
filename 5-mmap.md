@@ -2,7 +2,7 @@
 
 ## Objective
 
-> The `mmap` and `munmap` system calls allow UNIX programs to exert detailed control over their address spaces. They can be used to share memory among processes, to map files into process address spaces, and as part of user-level page fault schemes such as the garbage-collection algorithms discussed in lecture. In this lab you'll add `mmap` and `munmap` to `xv6`, focusing on memory-mapped files.
+> The `mmap` and `munmap` system calls allow UNIX programs to exert detailed control over their address spaces. They can be used to share memory among processes, to map files into process address spaces, and as part of user-level page fault schemes such as garbage-collection algorithms.
 
 ## Implementation
 
@@ -88,7 +88,7 @@ We need to define the VMA structure (recording start, length, permission, flags 
 +};
 ```
 
-We need to add a table in `struct proc` of all the VMAs for a process. Since the `xv6` kernel doesn't have a memory allocator in the kernel, it's OK to declare a fixed size array of VMAs and allocate from that array as needed. A size of 16 should be sufficient.
+We need to add a table in `struct proc` of all the VMAs for a process. Since the `Xv6` kernel doesn't have a memory allocator in the kernel, it's OK to declare a fixed size array of VMAs and allocate from that array as needed. A size of 16 should be sufficient.
 
 #### `kernel/proc.h`
 

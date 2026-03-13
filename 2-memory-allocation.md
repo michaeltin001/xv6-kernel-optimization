@@ -4,14 +4,14 @@
 
 ### Objective
 
-> xv6 has only a page allocator and cannot dynamically allocate objects smaller
-than a page. To work around this limitation, xv6 declares objects smaller than a
-page statically. For example, xv6 declares an array of file structs, an array of
+> Xv6 has only a page allocator and cannot dynamically allocate objects smaller
+than a page. To work around this limitation, Xv6 declares objects smaller than a
+page statically. For example, Xv6 declares an array of file structs, an array of
 proc structures, and so on. As a result, the number of files the system can have
 open is limited by the size of the statically declared file array, which has NFILE
 entries (see kernel/file.c and kernel/param.h).
 >
-> The solution is to adopt the buddy allocator, which we have added to xv6 in
+> The solution is to adopt the buddy allocator, which we have added to Xv6 in
 `kernel/buddy.c` and `kernel/list.c`. In `kernel/file.c`, the number of file structures should be limited by available
 memory rather than `NFILE`.
 
@@ -94,7 +94,7 @@ fileclose(struct file *f)
 
 > One of the many neat tricks an O/S can play with page table hardware is lazy
 allocation of user-space heap memory. Xv6 applications ask the kernel for heap
-memory using the `sbrk()` system call. In the kernel we've given you, `sbrk()`
+memory using the `sbrk()` system call. In the Xv6 kernel, `sbrk()`
 allocates physical memory and maps it into the process's virtual address space.
 However, there are programs that use `sbrk()` to ask for large amounts of memory
 but never use most of it, for example to implement large sparse arrays. To

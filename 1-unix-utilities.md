@@ -4,7 +4,7 @@
 
 ### Objective
 
-> The goal of this exercise is to implement the UNIX `sleep` program for xv6. The program pauses execution for a user-specified number of ticks. A tick represents a unit of time defined by the xv6 kernel, specifically the interval between two interrupts from the timer chip. The implementation is placed in the file `user/sleep.c`. 
+> The goal of this exercise is to implement the UNIX `sleep` program for Xv6. The program pauses execution for a user-specified number of ticks. A tick represents a unit of time defined by the Xv6 kernel, specifically the interval between two interrupts from the timer chip. The implementation is placed in the file `user/sleep.c`. 
 
 ### Implementation
 

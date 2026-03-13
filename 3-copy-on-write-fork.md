@@ -2,7 +2,7 @@
 
 ## Background
 
-> The `fork()` system call in xv6 copies all of the parent process's user-space memory into the child.
+> The `fork()` system call in Xv6 copies all of the parent process's user-space memory into the child.
 If the parent is large, copying can take a long time. In addition, the copies often waste memory; in many cases neither the parent nor the child modifies a page, so that in principle they could share the same physical memory.
 The inefficiency is particularly clear if the child calls `exec()`, since `exec()` will throw away the copied pages, probably without using most of them. On the other hand, if both parent and child use a page, and one or both writes it, a copy is truly needed.
 >
